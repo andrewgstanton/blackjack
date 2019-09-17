@@ -4,6 +4,9 @@ $(document).ready(function(){
 
 	Added more output for winning/loosing to the 'hand' object
 	Added a restart button click to re-deal
+
+    slightly more organization used sub objects for cardnames and suits for more readability
+
 */
 
 
@@ -13,61 +16,95 @@ $(document).ready(function(){
 		this.name = name;
 		this.suit = suit;
 		this.value = value;
-	} 
-	
+	}
+
+	function suit(name) {
+	    this.name = name;
+	}
+
+	function cardname(name, value) {
+	    this.name = name;
+	    this.value = value;
+	}
+
+    var Hearts = new suit('Hearts');
+    var Diamonds = new suit('Diamonds');
+    var	Clubs = new suit('Clubs');
+    var Spades = new suit('Spades');
+
+    var Ace = new cardname('Ace', 11);
+    var Two = new cardname('Two', 2);
+    var Three = new cardname('Three', 3);
+    var Four = new cardname('Four', 4);
+    var Five = new cardname('Five', 5);
+    var Six = new cardname('Six', 6);
+    var Seven = new cardname('Seven', 7);
+    var Eight = new cardname('Eight', 8);
+    var Nine = new cardname('Nine', 9);
+    var Ten = new cardname('Ten', 10);
+    var Jack = new cardname('Jack', 10);
+    var Queen = new cardname('Queen', 10);
+    var King = new cardname('King', 10);
+
+
 	var deck = [
-		new card('Ace', 'Hearts',11),
-		new card('Two', 'Hearts',2),
-		new card('Three', 'Hearts',3),
-		new card('Four', 'Hearts',4),
-		new card('Five', 'Hearts',5),
-		new card('Six', 'Hearts',6),
-		new card('Seven', 'Hearts',7),
-		new card('Eight', 'Hearts',8),
-		new card('Nine', 'Hearts',9),
-		new card('Ten', 'Hearts',10),
-		new card('Jack', 'Hearts',10),
-		new card('Queen', 'Hearts',10),
-		new card('King', 'Hearts',10),
-		new card('Ace', 'Diamonds',11),
-		new card('Two', 'Diamonds',2),
-		new card('Three', 'Diamonds',3),
-		new card('Four', 'Diamonds',4),
-		new card('Five', 'Diamonds',5),
-		new card('Six', 'Diamonds',6),
-		new card('Seven', 'Diamonds',7),
-		new card('Eight', 'Diamonds',8),
-		new card('Nine', 'Diamonds',9),
-		new card('Ten', 'Diamonds',10),
-		new card('Jack', 'Diamonds',10),
-		new card('Queen', 'Diamonds',10),
-		new card('King', 'Diamonds',10),
-		new card('Ace', 'Clubs',11),
-		new card('Two', 'Clubs',2),
-		new card('Three', 'Clubs',3),
-		new card('Four', 'Clubs',4),
-		new card('Five', 'Clubs',5),
-		new card('Six', 'Clubs',6),
-		new card('Seven', 'Clubs',7),
-		new card('Eight', 'Clubs',8),
-		new card('Nine', 'Clubs',9),
-		new card('Ten', 'Clubs',10),
-		new card('Jack', 'Clubs',10),
-		new card('Queen', 'Clubs',10),
-		new card('King', 'Clubs',10),
-		new card('Ace', 'Spades',11),
-		new card('Two', 'Spades',2),
-		new card('Three', 'Spades',3),
-		new card('Four', 'Spades',4),
-		new card('Five', 'Spades',5),
-		new card('Six', 'Spades',6),
-		new card('Seven', 'Spades',7),
-		new card('Eight', 'Spades',8),
-		new card('Nine', 'Spades',9),
-		new card('Ten', 'Spades',10),
-		new card('Jack', 'Spades',10),
-		new card('Queen', 'Spades',10),
-		new card('King', 'Spades',10)
+
+		new card(Ace.name, Hearts.name, Ace.value),
+		new card(Two.name, Hearts.name, Two.value),
+		new card(Three.name, Hearts.name, Three.value),
+		new card(Four.name, Hearts.name, Four.value),
+		new card(Five.name, Hearts.name, Five.value),
+		new card(Six.name, Hearts.name, Six.value),
+		new card(Seven.name, Hearts.name, Seven.value),
+		new card(Eight.name, Hearts.name, Eight.value),
+		new card(Nine.name, Hearts.name, Nine.value),
+		new card(Ten.name, Hearts.name, Ten.value),
+		new card(Jack.name, Hearts.name, Jack.value),
+		new card(Queen.name, Hearts.name, Queen.value),
+		new card(King.name, Hearts.name, King.value),
+
+		new card(Ace.name, Diamonds.name, Ace.value),
+		new card(Two.name, Diamonds.name, Two.value),
+		new card(Three.name, Diamonds.name, Three.value),
+		new card(Four.name, Diamonds.name, Four.value),
+		new card(Five.name, Diamonds.name, Five.value),
+		new card(Six.name, Diamonds.name, Six.value),
+		new card(Seven.name, Diamonds.name, Seven.value),
+		new card(Eight.name, Diamonds.name, Eight.value),
+		new card(Nine.name, Diamonds.name, Nine.value),
+		new card(Ten.name, Diamonds.name, Ten.value),
+		new card(Jack.name, Diamonds.name, Jack.value),
+		new card(Queen.name, Diamonds.name, Queen.value),
+		new card(King.name, Diamonds.name, King.value),
+
+		new card(Ace.name, Clubs.name, Ace.value),
+		new card(Two.name, Clubs.name, Two.value),
+		new card(Three.name, Clubs.name, Three.value),
+		new card(Four.name, Clubs.name, Four.value),
+		new card(Five.name, Clubs.name, Five.value),
+		new card(Six.name, Clubs.name, Six.value),
+		new card(Seven.name, Clubs.name, Seven.value),
+		new card(Eight.name, Clubs.name, Eight.value),
+		new card(Nine.name, Clubs.name, Nine.value),
+		new card(Ten.name, Clubs.name, Ten.value),
+		new card(Jack.name, Clubs.name, Jack.value),
+		new card(Queen.name, Clubs.name, Queen.value),
+		new card(King.name, Clubs.name, King.value),
+
+		new card(Ace.name, Spades.name, Ace.value),
+		new card(Two.name, Spades.name, Two.value),
+		new card(Three.name, Spades.name, Three.value),
+		new card(Four.name, Spades.name, Four.value),
+		new card(Five.name, Spades.name, Five.value),
+		new card(Six.name, Spades.name, Six.value),
+		new card(Seven.name, Spades.name, Seven.value),
+		new card(Eight.name, Spades.name, Eight.value),
+		new card(Nine.name, Spades.name, Nine.value),
+		new card(Ten.name, Spades.name, Ten.value),
+		new card(Jack.name, Spades.name, Jack.value),
+		new card(Queen.name, Spades.name, Queen.value),
+		new card(King.name, Spades.name, King.value)
+
 	];
 	
 	var hand = {
